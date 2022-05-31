@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!--    Header   -->
+     
+    <header>
+        <div class="navbar">
+            <div class="container">
+                <a href="index.html" class="Logo" >Silly Point</a>
+                <div class="navbar-nav">
+                    <a href="">Home</a>
+                    <a href="#football">Football</a>
+                    <a href="#cricket">Cricket</a>
+                    <a href="#about">About</a>
+                <!---    <a href="#contact">Contact</a> -->
+                </div>
+            </div>
+        </div>
+        <div class="banner">
+            <div class="container">
+                <h1 class="banner-title">
+                    <span>Silly.</span> Point
+                </h1>
+                <p>Your one stop for all the sports action in india</p>
+                <form action="{% url 'search' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="search_key" class="search" placeholder="What's on your mind?">
+                    <button type="submit" class="search-button" >
+                        <i class="bx bxs-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blogs -->
+    
+    <section class="blog" id="blog">
+        <div class="container">
+                <div id="cricket">
+                <div class="title">
+                    <h2>Cricket Blogs</h2>
+                    <p>Recent blogs on cricket around the world</p>
+                </div>
+                <div class="blog-content">
+    
+                    <!--Blog item-->
+
+                    {% for blog in blogs %}
+                   
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="{{blog.img.url}}" alt="">
+                            <span><i class="far fa-heart"></i></span>
+                        </div>
+                        <div class="blog-text">
+                            <span>{{ blog.date }}</span>
+                            <h2>{{ blog.headline }}</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                 Vel ipsam illum a quaerat tenetur! Porro.</p>
+                                 <a href="/blog/{{blog.id}}">Read more</a>     
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="imgs/bg.jpg" alt="">
+                            <span><i class="far fa-heart"></i></span>
+                        </div>
+                        <div class="blog-text">
+                            <span>20 January, 2020</span>
+                            <h2>Lorem ipsum dolor sit  amet consectetur adipisicing elit.</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                 Vel ipsam illum a quaerat tenetur! Porro.</p>
+                                 <a href="">Read more</a>     
+                        </div>
+                    </div>
+    
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="imgs/bg.jpg" alt="">
+                            <span><i class="far fa-heart"></i></span>
+                        </div>
+                        <div class="blog-text">
+                            <span>20 January, 2020</span>
+                            <h2>Lorem ipsum dolor sit
+                                 amet consectetur adipisicing elit.</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                 Vel ipsam illum a quaerat tenetur! Porro.</p>
+                                 <a href="">Read more</a>     
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+
+        
+        <div class="container">
+          <div id="football">  
+            <div class="title">
+                <h2>Football Blogs</h2>
+                <p>Recent blogs on football around the world</p>
+            </div>
+            <div class="blog-content">
+
+                <!--Blog item-->
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src="imgs/bg.jpg" alt="">
+                        <span><i class="far fa-heart"></i></span>
+                    </div>
+                    <div class="blog-text">
+                        <span>20 January, 2020</span>
+                        <h2>Lorem ipsum dolor sit
+                             amet consectetur adipisicing elit.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                             Vel ipsam illum a quaerat tenetur! Porro.</p>
+                             <a href="">Read more</a>     
+                    </div>
+                </div>
+            </div>
+          </div>  
+        </div>        
+
+
+
+
+    </section>
+
+    <!--   About    -->
+    
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div>
+                    <img src="{% static 'imgs/6bcc6f672d12c622dfdfabeab24f33ff.jpg'%}" alt="">
+                </div>
+                <div class="about-text">
+                    <div class="title">
+                        <h2>Ambuj Pandey</h2>
+                        <p>What do they know of sports who only sports know</p>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim porro consequatur 
+                        perspiciatis ipsa vero cupiditate facilis nihil adipisci atque ut? Molestiae, reprehenderit? Quam quae nesciunt nulla exercitationem quia tempora impedit id mollitia doloremque deserunt error ipsa aut dicta, architecto, cupiditate quisquam illum maxime
+                         eos dolorum? Quibusdam obcaecati autem dolore eos temporibus dicta harum incidunt
+                          distinctio.</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam, asperiores! Veritatis tempora hic nostrum illo eos,
+                         ea aliquam veniam exercitationem maiores nesciunt omnis quod modi.</p>      
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--     Footer    -->
+    
+    <footer>
+        <div class="social-links">
+            <a href=""> <i class="bx bxl-facebook"></i></a>
+            <a href=""> <i class="bx bxl-twitter"></i></a>
+            <a href=""> <i class="bx bxl-instagram"></i></a>
+        </div>
+        <span>Silly Point</span>
+    </footer>
+</body>
+</html>

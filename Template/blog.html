@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+<body>
+    <!--    Header   -->
+     
+    <header>
+        <div class="navbar">
+            <div class="container">
+                <a href="/" class="Logo" >Silly Point</a>
+                <div class="navbar-nav">
+                    <a href="/">Home</a>
+                    <a href="/">Football</a>
+                    <a href="/">Cricket</a>
+                    <a href="/">About</a>
+                <!---    <a href="#contact">Contact</a> -->
+                </div>
+            </div>
+        </div>
+        
+    </header>
+
+    <!-- Blogs -->
+    
+   
+        <!--Blog item-->
+       
+        <div class="blog-item">
+            
+            <div class="blog-text">
+                
+                <h2>{{ blog.headline }}</h2>
+                     <span>{{ blog.date }}</span>     
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, excepturi culpa ullam 
+                    nobis quam blanditiis id doloribus laudantium repudiandae. Dolor quasi, ad modi consectetur est quaerat aspernatur voluptatibus magnam sunt soluta quas nostrum aut atque dolore quo doloribus 
+                    totam necessitatibus voluptas animi? Totam ipsam sint maxime beatae! Natus, ipsam dicta.     
+                    Vel ipsam illum a quaerat tenetur! Porro.</p>
+                    <div class="blog-img">
+                        <img src="{{blog.img.url}}" alt="">
+                        <span><i class="far fa-heart"></i></span>
+                    </div>    
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti pariatur 
+                    adipisci laborum nihil cupiditate. Fuga maxime modi molestias, quod tempora odit ullam at 
+                    perferendis voluptatum illum sunt doloribus quibusdam ut quam ad dolore qui provident neque consequatur error perspiciatis?
+                     Consequatur quaerat nesciunt recusandae dolore et?</p>     
+            </div>
+        </div>
+       
+    <!--     Footer    -->
+    
+    <footer>
+        <div class="social-links">
+            <a href=""> <i class="bx bxl-facebook"></i></a>
+            <a href=""> <i class="bx bxl-twitter"></i></a>
+            <a href=""> <i class="bx bxl-instagram"></i></a>
+        </div>
+        <span>Silly Point</span>
+    </footer>
+</body>
+</html>

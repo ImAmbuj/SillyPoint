@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!--    Header   -->
+     
+   
+        
+        <div class="navbar">
+            <div class="container">
+                <a href="/" class="Logo" >Silly Point</a>
+                <div class="navbar-nav">
+                    <a href="/">Home</a>
+                    <a href="/">Football</a>
+                    <a href="/">Cricket</a>
+                    <a href="/">About</a>
+                <!---    <a href="#contact">Contact</a> -->
+                </div>
+            </div>
+        </div>
+        <div class="banner">
+            <div class="container">
+                
+                <form action="">
+                    <input type="text" name="" class="search" placeholder="What's on your mind?">
+                    <button type="submit" class="search-button" >
+                        <i class="bx bxs-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    
+
+    <!-- Blogs -->
+    
+    <section class="blog" id="blog">
+        <div class="container">
+                <div id="cricket">
+                <div class="title">
+                    <h2>Search Results</h2>
+                    <p>You searched for '{{searched}}' </p>
+                </div>
+                <div class="blog-content">
+                  {% for s in search_results %}
+                    <!--Blog item-->
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="{{s.img.url}}" alt="">
+                            <span><i class="far fa-heart"></i></span>
+                        </div>
+                        <div class="blog-text">
+                            <span>20 January, 2020</span>
+                            <h2>{{s.headline}}</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                 Vel ipsam illum a quaerat tenetur! Porro.</p>
+                                 <a href="">Read more</a>     
+                        </div>
+                    </div>
+                   {% endfor %}
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="imgs/bg.jpg" alt="">
+                            <span><i class="far fa-heart"></i></span>
+                        </div>
+                        <div class="blog-text">
+                            <span>20 January, 2020</span>
+                            <h2>Lorem ipsum dolor sit  amet consectetur adipisicing elit.</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                 Vel ipsam illum a quaerat tenetur! Porro.</p>
+                                 <a href="">Read more</a>     
+                        </div>
+                    </div>
+    
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="imgs/bg.jpg" alt="">
+                            <span><i class="far fa-heart"></i></span>
+                        </div>
+                        <div class="blog-text">
+                            <span>20 January, 2020</span>
+                            <h2>Lorem ipsum dolor sit
+                                 amet consectetur adipisicing elit.</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                 Vel ipsam illum a quaerat tenetur! Porro.</p>
+                                 <a href="">Read more</a>     
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+
+        
+
+
+    </section>
+
+    <!--     Footer    -->
+    
+    <footer>
+        <div class="social-links">
+            <a href=""> <i class="bx bxl-facebook"></i></a>
+            <a href=""> <i class="bx bxl-twitter"></i></a>
+            <a href=""> <i class="bx bxl-instagram"></i></a>
+        </div>
+        <span>Silly Point</span>
+    </footer>
+</body>
+</html>
